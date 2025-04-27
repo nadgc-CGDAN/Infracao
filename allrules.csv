@@ -1,0 +1,17 @@
+# Dados de exemplo para o arquivo allrules.csv
+allrules_data = [
+    ["no-console", 5],
+    ["no-unused-vars", 3],
+    ["no-var", 4],
+    ["semi-colon", 6]
+]
+
+# Caminho para o arquivo allrules.csv
+allrules_file_path = os.path.join(directory, "allrules.csv")
+
+# Criação do arquivo allrules.csv
+with open(allrules_file_path, mode="w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Rule", "Count"])  # Cabeçalhos
+    writer.writerows(allrules_data)
+    print(f"Arquivo '{allrules_file_path}' criado com sucesso!")
